@@ -52,6 +52,7 @@ class HomeController extends GetxController {
             "Content-Type": "application/json",
             "Authorization": "Bearer $token"
           });
+      log(response.body);
       if (response.statusCode > 199 && response.statusCode < 300) {
         final locationDataModel = locationDataModelFromJson(response.body);
         totalPages.value = locationDataModel.data.pagination.totalPages;

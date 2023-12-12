@@ -34,12 +34,12 @@ class ProfileView extends GetView<ProfileController> {
                     Text(
                       "Hello",
                       style: GoogleFonts.poppins(
-                          fontSize: 14, fontWeight: FontWeight.w500),
+                          fontSize: 10, fontWeight: FontWeight.w500),
                     ),
                     Text(
                       "$firstName $lastName",
                       style: GoogleFonts.poppins(
-                          fontSize: 18, fontWeight: FontWeight.w500),
+                          fontSize: 14, fontWeight: FontWeight.w500),
                     ),
                   ],
                 );

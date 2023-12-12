@@ -47,7 +47,7 @@ class BottomBarView extends GetView<BottomBarController> {
                         assetPath: selectedPageIndex.value != 0
                             ? 'assets/bottom_bar/home.svg'
                             : 'assets/bottom_bar/home_selected.svg',
-                        size: 32,
+                        size: 24,
                       ),
                       label: 'Home'),
                   BottomNavigationBarItem(
@@ -55,7 +55,7 @@ class BottomBarView extends GetView<BottomBarController> {
                         assetPath: selectedPageIndex.value != 1
                             ? 'assets/bottom_bar/activity.svg'
                             : 'assets/bottom_bar/activity_selected.svg',
-                        size: 32,
+                        size: 24,
                       ),
                       label: 'Activity'),
                   BottomNavigationBarItem(
@@ -63,7 +63,7 @@ class BottomBarView extends GetView<BottomBarController> {
                         assetPath: selectedPageIndex.value != 2
                             ? 'assets/bottom_bar/community.svg'
                             : 'assets/bottom_bar/community_selected.svg',
-                        size: 32,
+                        size: 24,
                       ),
                       label: 'Community'),
                   BottomNavigationBarItem(
@@ -71,7 +71,7 @@ class BottomBarView extends GetView<BottomBarController> {
                         assetPath: selectedPageIndex.value != 3
                             ? 'assets/bottom_bar/profile.svg'
                             : 'assets/bottom_bar/profile_selected.svg',
-                        size: 32,
+                        size: 24,
                       ),
                       label: 'Profile')
                 ]),

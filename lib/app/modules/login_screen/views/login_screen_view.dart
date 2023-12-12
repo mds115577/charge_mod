@@ -73,8 +73,8 @@ class LoginScreenView extends GetView<LoginScreenController> {
                             fillColor: whiteColor,
                             filled: true,
                             hintText: "Enter phone number",
-                            hintStyle:
-                                const TextStyle(color: secondaryTextColor),
+                            hintStyle: const TextStyle(
+                                fontSize: 14, color: secondaryTextColor),
                             icon: InkWell(
                               onTap: () {
                                 controller.openCountryPicker();

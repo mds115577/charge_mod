@@ -24,100 +24,104 @@ class UpdateProfileView extends GetView<UpdateProfileController> {
         ),
         centerTitle: true,
       ),
-      body: Padding(
-        padding: EdgeInsets.only(left: 5.w, right: 5.w, top: 30),
-        child: Form(
-          key: formKey,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                ' First Name',
-                style: GoogleFonts.poppins(
-                    fontSize: 12, fontWeight: FontWeight.w600),
+      body: ListView(
+        children: [
+          Padding(
+            padding: EdgeInsets.only(left: 5.w, right: 5.w, top: 30),
+            child: Form(
+              key: formKey,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    ' First Name',
+                    style: GoogleFonts.poppins(
+                        fontSize: 12, fontWeight: FontWeight.w600),
+                  ),
+                  const SizedBox(
+                    height: 6,
+                  ),
+                  textFields(
+                    hintText: "First Name",
+                    keyBoardType: TextInputType.name,
+                    textEditingController:
+                        updateProfileController.firstNameEditingController,
+                    validator: (value) {
+                      if (!RegExp(r'^[a-zA-Z ]+$').hasMatch(value!)) {
+                        return 'please enter valid name';
+                      } else {
+                        return null;
+                      }
+                    },
+                  ),
+                  const SizedBox(height: 18),
+                  Text(
+                    ' Last Name',
+                    style: GoogleFonts.poppins(
+                        fontSize: 12, fontWeight: FontWeight.w600),
+                  ),
+                  const SizedBox(
+                    height: 6,
+                  ),
+                  textFields(
+                    hintText: "Last Name",
+                    keyBoardType: TextInputType.name,
+                    textEditingController:
+                        updateProfileController.lastNameEditingController,
+                    validator: (value) {
+                      if (!RegExp(r'^[a-zA-Z ]+$').hasMatch(value!)) {
+                        return 'please enter valid name';
+                      } else {
+                        return null;
+                      }
+                    },
+                  ),
+                  const SizedBox(height: 18),
+                  Text(
+                    ' E-mail',
+                    style: GoogleFonts.poppins(
+                        fontSize: 12, fontWeight: FontWeight.w600),
+                  ),
+                  const SizedBox(
+                    height: 6,
+                  ),
+                  textFields(
+                    hintText: "email",
+                    keyBoardType: TextInputType.emailAddress,
+                    textEditingController:
+                        updateProfileController.emailEditingController,
+                    validator: (value) {
+                      if (!RegExp(r'^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$')
+                              .hasMatch(value!) ||
+                          value.length < 3) {
+                        return 'please enter valid email';
+                      } else {
+                        return null;
+                      }
+                    },
+                  ),
+                  const SizedBox(height: 20),
+                  Text(
+                    'Phone Number',
+                    style: GoogleFonts.poppins(
+                        fontSize: 12, fontWeight: FontWeight.w600),
+                  ),
+                  const SizedBox(
+                    height: 7,
+                  ),
+                  Text(mobileNumber,
+                      style: GoogleFonts.poppins(
+                          color: secondaryTextColor,
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400)),
+                  const SizedBox(
+                    height: 50,
+                  )
+                ],
               ),
-              const SizedBox(
-                height: 6,
-              ),
-              textFields(
-                hintText: "First Name",
-                keyBoardType: TextInputType.name,
-                textEditingController:
-                    updateProfileController.firstNameEditingController,
-                validator: (value) {
-                  if (!RegExp(r'^[a-zA-Z ]+$').hasMatch(value!)) {
-                    return 'please enter valid name';
-                  } else {
-                    return null;
-                  }
-                },
-              ),
-              const SizedBox(height: 18),
-              Text(
-                ' Last Name',
-                style: GoogleFonts.poppins(
-                    fontSize: 12, fontWeight: FontWeight.w600),
-              ),
-              const SizedBox(
-                height: 6,
-              ),
-              textFields(
-                hintText: "Last Name",
-                keyBoardType: TextInputType.name,
-                textEditingController:
-                    updateProfileController.lastNameEditingController,
-                validator: (value) {
-                  if (!RegExp(r'^[a-zA-Z ]+$').hasMatch(value!)) {
-                    return 'please enter valid name';
-                  } else {
-                    return null;
-                  }
-                },
-              ),
-              const SizedBox(height: 18),
-              Text(
-                ' E-mail',
-                style: GoogleFonts.poppins(
-                    fontSize: 12, fontWeight: FontWeight.w600),
-              ),
-              const SizedBox(
-                height: 6,
-              ),
-              textFields(
-                hintText: "email",
-                keyBoardType: TextInputType.emailAddress,
-                textEditingController:
-                    updateProfileController.emailEditingController,
-                validator: (value) {
-                  if (!RegExp(r'^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$')
-                          .hasMatch(value!) ||
-                      value.length < 3) {
-                    return 'please enter valid email';
-                  } else {
-                    return null;
-                  }
-                },
-              ),
-              const SizedBox(height: 20),
-              Text(
-                'Phone Number',
-                style: GoogleFonts.poppins(
-                    fontSize: 12, fontWeight: FontWeight.w600),
-              ),
-              const SizedBox(
-                height: 7,
-              ),
-              Text(mobileNumber,
-                  style: GoogleFonts.poppins(
-                      color: secondaryTextColor,
-                      fontSize: 12,
-                      fontWeight: FontWeight.w400)),
-              const SizedBox(
-                height: 50,
-              )
-            ],
+            ),
           ),
-        ),
+        ],
       ),
       bottomNavigationBar: SizedBox(
         height: 150,

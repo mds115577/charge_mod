@@ -87,9 +87,11 @@ class InfoWidget extends StatelessWidget {
                             size: 20,
                             color: whiteColor,
                           ),
-                          Text(
-                            "Add Energy",
-                            style: TextStyle(color: whiteColor),
+                          Flexible(
+                            child: Text(
+                              "Add Energy",
+                              style: TextStyle(color: whiteColor, fontSize: 12),
+                            ),
                           )
                         ],
                       )),
